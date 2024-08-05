@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsApp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5eebd4d6b6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">
+            <a href="" class="comp-logo" onclick="relod()">
+                <img src="assets/Blue_and_Yellow_Live_News_Free_Logo-removebg-preview.png" alt="Logo"></a>
+        </div>
+        <div class="nav-items">
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#" class="a-links" id="politics" onclick="onNavItemClick('politics')">Politics</a></li>
+                    <li><a href="#" class="a-links" id="technology"
+                            onclick="onNavItemClick('technology')">Technology</a></li>
+                    <li><a href="#" class="a-links" id="sports" onclick="onNavItemClick('sports')">Sports</a></li>
+                    <li><a href="#" class="a-links" id="finance" onclick="onNavItemClick('finance')">Finance</a></li>
+                </ul>
+            </div>
+            <div class="search-bar">
+                <input type="text" class="news-input" id="input-text" placeholder="e.g Science" onkeypress="newsKeyPress(event)">
+                <button class="search" id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="cards-container container" id="cards-container">
+        </div>
+        <div class="stocks-container">
+            <div class="watchlist">
+                <h4>Watchlist</h4>
+            </div>
+            <div class="add-bar">
+                <input type="text" class="symbol-input" id="symbol-input" placeholder="AAPL" onkeypress="stockKeyPress(event)">
+                <button class="add" id="add"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="stockCardContainer" id="stockCardContainer"></div>
+        </div>
+    </main>
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-img" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget</h6>
+                <p class="news-desc" id="news-desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo asperiores quia sit maxime obcaecati,
+                    repudiandae minima! Reprehenderit vel reiciendis culpa repudiandae voluptate quo sunt praesentium,
+                    iste blanditiis sapiente suscipit totam.
+                </p>
+            </div>
+        </div>
+    </template>
+
+    <template class="stockCardTemplate" id="stockCardTemplate">
+        <div class="stockCard" id="stockCard">
+            <div class="stockCardContent" id="stockCardContent">
+                <table class="stockData" id="stockData">
+                    <tr class="symbolRow">
+                        <th style="text-align: left;" id="stock-symbol">Symbol</th>
+                        <th style="text-align: right;" id="stock-price">Price</th>
+                    </tr>
+                    <tr class="nameRow">
+                        <td style="text-align: left;">Price Change</td>
+                        <td style="text-align: right;" class="price-change" id="price-change">Price Change</td>
+                    </tr>
+                </table>
+                <hr>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
